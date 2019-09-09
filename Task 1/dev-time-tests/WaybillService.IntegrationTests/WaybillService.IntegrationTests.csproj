@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.2</TargetFramework>
+        <IsPackable>false</IsPackable>
+        <OutputType>Library</OutputType>
+        <LangVersion>7.3</LangVersion>
+    </PropertyGroup>
+    <ItemGroup>
+      <None Remove="Client\SupplierProcurement\Resources\SupplierProcurement_DownloadPhase1Proposal.xlsx" />
+      <None Remove="Client\SupplierProcurement\Resources\SupplierProcurement_DownloadPhase2Proposal.xlsx" />
+    </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.App" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="2.2.0" />
+      <PackageReference Include="FluentAssertions" Version="5.6.0" />
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.1.0" />
+      <PackageReference Include="xunit" Version="2.4.1" />
+      <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\src\WaybillService.Presentation\WaybillService.Presentation.csproj" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Controllers\Waybills\УПД.xlsx" />
+    <None Remove="Consumers\Waybills\ImportedWaybillMessage.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Waybills\УПД-2 от 09.09.xlsx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Waybills\upd-aktisf-2019.xlsx" />
+    <EmbeddedResource Include="Waybills\УПД.xlsx" />
+  </ItemGroup>
+
+</Project>
